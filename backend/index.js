@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors')
 
 require('dotenv').config();
 
@@ -9,6 +10,7 @@ connectToDB().then(()=>console.log(`DB connected`)).catch(e=>console.log("Error"
 // middleware 
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
+app.use(cors());
 // User Routes
 
 app.use('/api/v1',userRouter);

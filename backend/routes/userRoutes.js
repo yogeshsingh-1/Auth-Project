@@ -1,7 +1,7 @@
 const express = require('express');
-const { createUser } = require('../services/userService');
 const router = express.Router({mergeParams : true});
+const {createUser} = require('../controllers/userController')
 
 router.post('/signup',createUser)
 
-module.exports = router
+module.exports = router;
