@@ -5,6 +5,7 @@ const cors = require('cors')
 require('dotenv').config();
 
 const userRouter = require('./routes/userRoutes');
+const createAdminAccount = require('./scripts/admin');
 const connectToDB = require('./config/connection');
 connectToDB().then(()=>console.log(`DB connected`)).catch(e=>console.log("Error"));
 // middleware 

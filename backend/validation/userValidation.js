@@ -32,10 +32,10 @@ class UserValidation {
       email: zod.string().email("Invalid email format"),
       password: zod.string().min(5, "Password must be at least 5 characters"),
     });
-
     const { success } = userValidate.safeParse(userData);
     return success;
   }
+
 }
 
 module.exports = new UserValidation();
